@@ -119,21 +119,3 @@ user.on('loggedOn', () => {
  	user7.setPersona(status7);               
  	user7.gamesPlayed(games7);
  });
-
-
- var username8 = process.env.username8;
- var password8 = process.env.password8;
- var shared_secret8 = process.env.shared8;
-
- var games8 = [730, 271590];
- var status8 = 1;
-
-
- user8 = new steamUser();
- user8.logOn({"accountName": username8, "password": password8, "twoFactorCode": steamTotp.generateAuthCode(shared_secret8)});
- user8.on('loggedOn', () => {
- 	if (user8.steamID != null) console.log(user8.steamID + ' - Successfully logged on');
- 	user8.setPersona(status8);               
- 	user8.gamesPlayed(games8);
- });
-
